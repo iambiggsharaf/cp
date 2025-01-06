@@ -1,25 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int n;
+    int n, x;
     cin >> n;
     vector<vector<int>> a;
     for(int i = 0; i < n; i++){
         vector<int> row;
         for(int j = 0; j < n; j++){
-            if(i == 0 or
-               j == n - 1 or
-               j == 0 or
-               i == n - 1) row.push_back(1);
-            else row.push_back(0);
+            if(i < n / 2) row.push_back(0);
+            else row.push_back(1);
         }
         a.push_back(row);
     }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            cout << a[i][j];
+    for(auto i: a){
+        for(auto j: i){
+            cout << j << " ";
         }
-        cout << endl;
+        cout << "\n";
     }
-}
+ }
 

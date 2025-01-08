@@ -18,7 +18,7 @@ int main (){
     }
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            if(i == x and j != y or j == y and i != x) arr[i][j] = 2;
+            if(i - j == x - y and i != x and j != y or i + j == x + y and i != x and j != y) arr[i][j] = 2;
         }
     }
     for(int i = 0; i < n; i++){

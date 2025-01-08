@@ -1,25 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main (){
-    int n = 10, m = 30, x, y, x1, y1, temp;
-    cin >> x >> y >> x1 >> y1;
+    int n = 10, m = 10, cnt = 0, temp;
     vector < vector <int> > arr;
     for(int i = 0; i < n; i++){
         vector <int> row;
         for(int j = 0; j < m; j++){
-            if(i == y and j >= x and j <= x1 or
-                i == y1 and j >= x and j <= x1 or
-                j == x and i >= y and i <= y1 or
-                j == x1 and i >= y and i <= y1) row.push_back(1);
-            else if(i > y and i < y1 and j > x and j < x1) row.push_back(2);
-            else row.push_back(0);
+            cin >> temp;
+            row.push_back(temp);
         }
         arr.push_back(row);
     }
-    for(auto row: arr){
-        for(auto ele: row){
-            cout << ele;
+    for(int i = 0; i < n - 1; i++){
+        for(int j = 0; j < m; j++){
+            if(arr[i][j] == 1 and arr[i + 1][j] == 1) cnt++;
         }
-        cout << "\n";
     }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m - 1; j++){
+            if(arr[i][j] == 1 and arr[i][j + 1] == 1) cnt++;
+        }
+    }
+    cout << cnt;
 }

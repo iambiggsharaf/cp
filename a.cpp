@@ -1,31 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main (){
-    int n = 8, temp, x, y;
-    //cin >>n;
+    int n = 10, m = 30, x, y, x1, y1, temp;
+    cin >> x >> y >> x1 >> y1;
     vector < vector <int> > arr;
-    for(int i = 0 ; i < n; i++){
+    for(int i = 0; i < n; i++){
         vector <int> row;
-        for(int j = 0; j < n; j++){
-            cin >> temp;
-            row.push_back(temp);
-            if(temp){
-                x = i;
-                y = j;
-            }
+        for(int j = 0; j < m; j++){
+            if(i >= y and i <= y1 and j >= x and j <= x1) row.push_back(1);
+            else row.push_back(0);
         }
         arr.push_back(row);
     }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(pow(abs(i - x),2) + pow(abs(j - y), 2) == 5) arr[i][j] = 2;
+
+    for(auto row: arr){
+        for(auto ele: row){
+            cout << ele << " ";
         }
+        cout << "\n";
     }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
 }

@@ -8,7 +8,7 @@ int main (){
     for(int i = 0 ; i < n; i++){
         vector <int> row;
         for(int j = 0; j < n; j++){
-            if(i == n / 2 or j == n / 2) row.push_back(1);
+            if(i % 2 == 0) row.push_back(1);
             else row.push_back(0);
         }
         arr.push_back(row);

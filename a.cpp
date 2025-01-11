@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main (){
-    int n, cnt = 0;
+    int n;
     cin >> n;
+    int cnt = 0;
     while(n){
-        cnt++;
+        cnt += n % 10;
         n /= 10;
     }
     cout << cnt;

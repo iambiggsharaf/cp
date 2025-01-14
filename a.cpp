@@ -2,11 +2,9 @@
 using namespace std;
 int main (){
     int n, a = 0, b = 0;
-    cin >> n;
-    while(n){
-        if(n%10%2==0) a++;
-        else b++;
-        n/=10;
+    while(cin >> n){
+        if(n == 0) break;
+        if(n % 6 == 0 and n % 10 == 4) a+=n;
     }
-    cout << a << " " << b;
+    cout << a;
 }

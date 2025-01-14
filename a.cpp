@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main (){
-    int n;
+    int n, a = 0, b = 0;
     cin >> n;
-    int cnt = 0;
     while(n){
-        cnt += n % 10;
-        n /= 10;
+        if(n%10%2==0) a++;
+        else b++;
+        n/=10;
     }
-    cout << cnt;
+    cout << a << " " << b;
 }

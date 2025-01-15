@@ -3,5 +3,7 @@ using namespace std;
 int main (){
     string s;
     cin >> s;
-    for(auto i: s) cout << bitset<3>(stoll(string(1, i), nullptr, 8)).to_string();
+    for(int i = 0; i < s.size(); i+=4){
+        cout << uppercase << hex << stoll(s.substr(i, 4), nullptr, 2);
+    }
 }

@@ -3,5 +3,5 @@ using namespace std;
 int main() {
     int x, y;
     cin >> x >> y;
-    cout << ((x >= 0 and x <= 3) and (y >= 0 and y <= 3) ? "Inside" : "Outside");
+    cout << ((y >= (x - 5) and (y >= (-x-2))) ? "Inside" : "Outside");
 }

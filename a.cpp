@@ -1,7 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int x, y;
-    cin >> x >> y;
-    cout << ( (y <= 3 and x <= 3 and y >= (-x-4)) and !( y <= 1 and x <= 1 and y >= (-x-2) )  ? "Inside" : "Outside");
+    string s;
+    cin >> s;
+    int cnt = 0;
+    for(int i = 0; i < s.size(); i++){
+        for(int j = 0; j < s.size(); j++){
+            for(int k = 0; k < s.size(); k++){
+                cout << cnt << ")\t" << s[i] << s[j] << s[k] << endl;
+                cnt++;
+            }
+        }
+    }
 }

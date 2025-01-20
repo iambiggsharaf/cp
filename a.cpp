@@ -1,15 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    string s;
-    cin >> s;
-    int cnt = 0;
-    for(int i = 0; i < s.size(); i++){
-        for(int j = 0; j < s.size(); j++){
-            for(int k = 0; k < s.size(); k++){
-                cout << cnt << ")\t" << s[i] << s[j] << s[k] << endl;
-                cnt++;
-            }
-        }
+    long long n, q, l, r, cnt = 0, num;
+    cin >> n >> q;
+    vector<long long> arr;
+    arr.push_back(cnt);
+    while(n--){
+        cin >> num;
+        cnt += num;
+        arr.push_back(cnt);
     }
+    //for(auto i: arr) cout << i << " ";
+    cout << endl;
+    while(q--){
+        cin >> l >> r;
+        cout << arr[r] - arr[l - 1] << endl;
+    }
+
 }

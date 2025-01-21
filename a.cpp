@@ -1,20 +1,35 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <set>
+
 int main() {
-    long long n, q, l, r, cnt = 0, num;
-    cin >> n >> q;
-    vector<long long> arr;
-    arr.push_back(cnt);
-    while(n--){
-        cin >> num;
-        cnt += num;
-        arr.push_back(cnt);
-    }
-    //for(auto i: arr) cout << i << " ";
-    cout << endl;
-    while(q--){
-        cin >> l >> r;
-        cout << arr[r] - arr[l - 1] << endl;
+    int N, M;
+    std::cin >> N; // Количество элементов первого списка
+
+    std::set<int> set1; // Множество для первого списка
+    for (int i = 0; i < N; ++i) {
+        int num;
+        std::cin >> num;
+        set1.insert(num);
     }
 
+    std::cin >> M; // Количество элементов второго списка
+
+    std::set<int> set2; // Множество для второго списка
+    for (int i = 0; i < M; ++i) {
+        int num;
+        std::cin >> num;
+        set2.insert(num);
+    }
+
+    // Считаем пересечение двух множеств
+    int count = 0;
+    for (int num : set1) {
+        if (set2.count(num)) {
+            ++count;
+        }
+    }
+
+    std::cout << count << std::endl;
+
+    return 0;
 }

@@ -1,14 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+bool comparison (pair <int, int> a, pair <int, int> b) {
+
+         return (a.second == b.second) ? a.first < b.first : a.second > b.second;
+
+}
 int main(){
-    double x, y;
-    cin >> x >> y;
-    bool a = (pow(x-5, 2) + pow(y, 2) <= 4 and y <= 0);
+    long long int n, a, b ;
+    cin >> n;
+    vector<pair<int, int>> arr;
+    for(int i = 0; i < n; i++){
+        cin >> a >> b;
+        arr.push_back({a, b});
+    }
+    sort(arr.begin(), arr.end(), comparison);
+    for(int i = 0; i < n; i++){
+        cout << arr[i].first << " " << arr[i].second<< "\n";
+    }
 
-    bool b = (pow(x, 2) + pow(y-3, 2) < 1);
-
-    bool c = (y <= 5);
-    bool d = (y >= -8*x/3-3);
-    bool e = (y >= 8*x/3-3);
-    cout << ( (a) or (c and d and e and !b) ? "Inside" : "Outside");
 }
